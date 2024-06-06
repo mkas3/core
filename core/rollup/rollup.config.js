@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 import dts from 'rollup-plugin-dts';
 
 const pkg = require('./package.json');
@@ -41,8 +41,10 @@ export default [
       }),
       typescript({
         tsconfig: './tsconfig.json',
-        compilerOptions: { noEmit: true },
-        noForceEmit: true
+        tsconfigDefaults: {
+          compilerOptions: { noEmit: true },
+          noForceEmit: true
+        }
       }),
       babel({
         exclude: /node_modules/,

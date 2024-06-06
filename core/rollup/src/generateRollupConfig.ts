@@ -6,8 +6,7 @@ import type { RollupNodeResolveOptions } from '@rollup/plugin-node-resolve';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import type { Options as RollupTerserOptions } from '@rollup/plugin-terser';
 import terser from '@rollup/plugin-terser';
-import { RPT2Options } from 'rollup-plugin-typescript2';
-import typescript from 'rollup-plugin-typescript2';
+import typescript, { RPT2Options } from 'rollup-plugin-typescript2';
 import { globSync } from 'glob';
 import { fileURLToPath } from 'node:url';
 import * as path from 'path';
@@ -128,7 +127,11 @@ export const generateRollupConfig = ({
         }),
         ...plugins,
         getRollupPlugin(typescript, configs.typescript, {
-          tsconfig: './tsconfig.json'
+          tsconfig: './tsconfig.json',
+          tsconfigDefaults: {
+            compilerOptions: { noEmit: true },
+            noForceEmit: true
+          }
         }),
         getRollupPlugin(babel, configs.babel, {
           exclude: /node_modules/,
