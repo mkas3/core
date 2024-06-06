@@ -49,16 +49,16 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.14.2",
     "glob": "^10.4.1",
     "rollup": "^4.18.0",
-    "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-typescript2": "^0.36.0"
+    "rollup-plugin-dts": "^6.1.1"
   },
   "devDependencies": {
     "@mkas3/eslint": "*",
     "@mkas3/prettier": "*",
-    "@mkas3/tsconfig": "*",
+    "@mkas3/tsconfig": "^1.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@types/glob": "^8.1.0",
     "shx": "^0.3.4"

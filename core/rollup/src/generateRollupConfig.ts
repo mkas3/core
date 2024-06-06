@@ -6,7 +6,8 @@ import type { RollupNodeResolveOptions } from '@rollup/plugin-node-resolve';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import type { Options as RollupTerserOptions } from '@rollup/plugin-terser';
 import terser from '@rollup/plugin-terser';
-import typescript, { RPT2Options } from 'rollup-plugin-typescript2';
+import type { RollupTypescriptOptions } from '@rollup/plugin-typescript';
+import typescript from '@rollup/plugin-typescript';
 import { globSync } from 'glob';
 import { fileURLToPath } from 'node:url';
 import * as path from 'path';
@@ -14,12 +15,10 @@ import type {
   InputPluginOption,
   OutputOptions,
   Plugin as RollupPlugin,
-  PluginImpl,
   RollupOptions
 } from 'rollup';
 import type { Options as RollupDtsOptions } from 'rollup-plugin-dts';
-
-const dts = require('rollup-plugin-dts') as { default: PluginImpl<RollupDtsOptions> };
+import dts from 'rollup-plugin-dts';
 
 export interface GenerateRollupConfigParams {
   pkg: {
@@ -50,7 +49,7 @@ export interface GenerateRollupConfigParams {
     dts?: RollupDtsOptions;
     terser?: RollupTerserOptions;
     commonJS?: RollupCommonJSOptions;
-    typescript?: RPT2Options;
+    typescript?: RollupTypescriptOptions;
     nodeResolve?: RollupNodeResolveOptions;
   };
 }
@@ -128,10 +127,8 @@ export const generateRollupConfig = ({
         ...plugins,
         getRollupPlugin(typescript, configs.typescript, {
           tsconfig: './tsconfig.json',
-          tsconfigDefaults: {
-            compilerOptions: { noEmit: true },
-            noForceEmit: true
-          }
+          compilerOptions: { noEmit: true },
+          noForceEmit: true
         }),
         getRollupPlugin(babel, configs.babel, {
           exclude: /node_modules/,
@@ -145,7 +142,7 @@ export const generateRollupConfig = ({
     {
       input: entry,
       output: [{ file: pkg.types, format: 'esm', ...output.types }],
-      plugins: [getRollupPlugin(dts.default, configs.dts)]
+      plugins: [getRollupPlugin(dts, configs.dts)]
     },
     ...options
   ];
