@@ -1,0 +1,44 @@
+{
+  "name": "@mkas3/stylelint",
+  "description": "Stylelint config",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "config",
+    "stylelint"
+  ],
+  "author": {
+    "name": "mkas3 📛",
+    "url": "https://github.com/mkas3"
+  },
+  "bugs": {
+    "url": "https://github.com/mkas3/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkas3/core"
+  },
+  "homepage": "https://github.com/mkas3/core",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".stylelintrc.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"*.js\""
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
+  },
+  "peerDependencies": {
+    "stylelint": "^16.6.1"
+  },
+  "devDependencies": {
+    "stylelint": "^16.6.1",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4"
+  }
+}

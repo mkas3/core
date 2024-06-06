@@ -1,0 +1,60 @@
+{
+  "name": "@mkas3/eslint",
+  "description": "Eslint configs",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "config",
+    "eslint"
+  ],
+  "author": {
+    "name": "mkas3 📛",
+    "url": "https://github.com/mkas3"
+  },
+  "bugs": {
+    "url": "https://github.com/mkas3/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkas3/core"
+  },
+  "homepage": "https://github.com/mkas3/core",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".eslintrc.node.js",
+    ".eslintrc.react.js",
+    ".eslintrc.next.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"*.js\""
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "^14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.2.0",
+    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "eslint-plugin-tailwindcss": "^3.17.3"
+  }
+}

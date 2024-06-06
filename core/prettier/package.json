@@ -1,0 +1,41 @@
+{
+  "name": "@mkas3/prettier",
+  "description": "Prettier config",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "config",
+    "prettier"
+  ],
+  "author": {
+    "name": "mkas3 📛",
+    "url": "https://github.com/mkas3"
+  },
+  "bugs": {
+    "url": "https://github.com/mkas3/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkas3/core"
+  },
+  "homepage": "https://github.com/mkas3/core",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".prettierrc.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"*.js\""
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
+  },
+  "peerDependencies": {
+    "prettier": "^3.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.1"
+  }
+}

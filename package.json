@@ -1,20 +1,45 @@
 {
-  "name": "core",
+  "name": "@mkas3/core",
   "private": true,
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "config",
+    "rollup",
+    "prettier",
+    "eslint",
+    "tsconfig",
+    "stylelint"
+  ],
+  "author": {
+    "name": "mkas3 📛",
+    "url": "https://github.com/mkas3"
+  },
+  "bugs": {
+    "url": "https://github.com/mkas3/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkas3/core"
+  },
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "stylelint": "turbo stylelint",
+    "format": "turbo format",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "deploying": "turbo deploy",
+    "change": "beachball change --no-commit",
+    "release": "beachball publish --yes",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.2.5",
-    "turbo": "latest"
+    "beachball": "^2.43.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "prettier": "^3.3.1",
+    "turbo": "latest",
+    "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@8.15.6",
-  "engines": {
-    "node": ">=18"
-  }
+  "packageManager": "pnpm@9.1.3"
 }
