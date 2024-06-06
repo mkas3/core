@@ -35,7 +35,7 @@
   "peerDependencies": {
     "stylelint": "^16.6.1"
   },
-  "devDependencies": {
+  "dependencies": {
     "stylelint": "^16.6.1",
     "stylelint-config-idiomatic-order": "^10.0.0",
     "stylelint-config-standard-scss": "^13.1.0",
