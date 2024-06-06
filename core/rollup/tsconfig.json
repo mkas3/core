@@ -1,0 +1,4 @@
+{
+  "extends": "@mkas3/tsconfig/tsconfig.json",
+  "include": ["**/*.ts"]
+}
