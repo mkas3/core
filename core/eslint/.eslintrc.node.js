@@ -83,7 +83,41 @@ module.exports = {
           'error',
           { prefer: 'type-imports', disallowTypeAnnotations: false }
         ],
-        '@typescript-eslint/require-await': 'error'
+        '@typescript-eslint/require-await': 'error',
+
+        'max-len': 'off',
+        'consistent-return': 'off',
+        'no-shadow': 'off',
+        'no-param-reassign': 'warn',
+        'no-console': ['warn', { allow: ['info', 'error'] }],
+        'sort-imports': 'off',
+        'require-await': 'error',
+
+        'import/order': 'off',
+        'import/extensions': 'off',
+        'import/prefer-default-export': 'off',
+        'import/no-extraneous-dependencies': 'off',
+
+        'simple-import-sort/exports': 'error',
+        'simple-import-sort/imports': [
+          'error',
+          {
+            groups: [
+              // External packages:
+              ['^@?\\w'],
+              // Internal packages:
+              ['^@(mkas3/core/.*|$)'],
+              // Alias imports:
+              ['^@(([\\/.]?\\w)|assets|test-utils)'],
+              // Side effect imports:
+              ['^\\u0000'],
+              // Parent imports:
+              ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+              // Other relative imports:
+              ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$']
+            ]
+          }
+        ]
       }
     }
   ]
