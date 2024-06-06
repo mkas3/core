@@ -2,6 +2,21 @@
   "name": "@mkas3/rollup",
   "entries": [
     {
+      "date": "Thu, 06 Jun 2024 21:51:45 GMT",
+      "version": "1.0.3",
+      "tag": "@mkas3/rollup_v1.0.3",
+      "comments": {
+        "none": [
+          {
+            "author": "madTwo.19@yandex.ru",
+            "package": "@mkas3/rollup",
+            "commit": "not available",
+            "comment": "1.0.3"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 06 Jun 2024 17:27:13 GMT",
       "version": "1.0.1",
       "tag": "@mkas3/rollup_v1.0.1",
