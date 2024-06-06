@@ -1,8 +1,16 @@
 # Change Log - @mkas3/rollup
 
-This log was last generated on Thu, 06 Jun 2024 23:07:44 GMT and should not be manually modified.
+This log was last generated on Thu, 06 Jun 2024 23:32:29 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.7
+
+Thu, 06 Jun 2024 23:32:29 GMT
+
+### Patches
+
+- fix: fix rollup typescript plugin (again) (madTwo.19@yandex.ru)
 
 ## 1.0.6
 
