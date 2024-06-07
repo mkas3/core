@@ -1,8 +1,26 @@
 # Change Log - @mkas3/rollup
 
-This log was last generated on Fri, 07 Jun 2024 15:22:46 GMT and should not be manually modified.
+This log was last generated on Fri, 07 Jun 2024 16:42:12 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.17
+
+Fri, 07 Jun 2024 16:42:12 GMT
+
+### Patches
+
+- fix: fix rollup (madTwo.19@yandex.ru)
+- Bump @mkas3/tsconfig to v1.0.4
+
+## 1.0.16
+
+Fri, 07 Jun 2024 16:41:42 GMT
+
+### Patches
+
+- fix: fix rollup (madTwo.19@yandex.ru)
+- Bump @mkas3/tsconfig to v1.0.4
 
 ## 1.0.15
 
