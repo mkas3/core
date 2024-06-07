@@ -30,8 +30,5 @@
   },
   "dependencies": {
     "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "tslib": "^2.6.3"
   }
 }
