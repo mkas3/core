@@ -110,6 +110,9 @@ importers:
       '@babel/runtime':
         specifier: ^7.24.7
         version: 7.24.7
+      '@mkas3/tsconfig':
+        specifier: ^1.0.3
+        version: 1.0.3(typescript@5.4.5)
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.24.7)(rollup@4.18.0)
@@ -147,9 +150,6 @@ importers:
       '@mkas3/prettier':
         specifier: '*'
         version: 1.0.1(prettier@3.3.1)
-      '@mkas3/tsconfig':
-        specifier: ^1.0.3
-        version: 1.0.3(typescript@5.4.5)
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.18.0)

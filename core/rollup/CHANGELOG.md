@@ -1,8 +1,16 @@
 # Change Log - @mkas3/rollup
 
-This log was last generated on Fri, 07 Jun 2024 14:54:40 GMT and should not be manually modified.
+This log was last generated on Fri, 07 Jun 2024 15:01:37 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.9
+
+Fri, 07 Jun 2024 15:01:37 GMT
+
+### Patches
+
+- fix: fix rollup dependencies (madTwo.19@yandex.ru)
 
 ## 1.0.8
 
