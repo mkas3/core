@@ -23,9 +23,11 @@
     "access": "public"
   },
   "sideEffects": false,
-  "main": "src/index.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "build": "shx rm -rf dist && rollup -c --bundleConfigAsCjs"
@@ -36,6 +38,7 @@
       "eslint -c .eslintrc.js --no-error-on-unmatched-pattern --fix"
     ]
   },
+  "peerDependencies": {},
   "dependencies": {
     "@mkas3/tsconfig": "^1.0.3",
     "@babel/core": "^7.24.7",
