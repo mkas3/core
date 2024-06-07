@@ -39,6 +39,7 @@
     ]
   },
   "dependencies": {
+    "@mkas3/tsconfig": "^1.0.3",
     "@babel/core": "^7.24.7",
     "@babel/plugin-transform-runtime": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
@@ -59,7 +60,6 @@
   "devDependencies": {
     "@mkas3/eslint": "*",
     "@mkas3/prettier": "*",
-    "@mkas3/tsconfig": "^1.0.3",
     "@rollup/plugin-json": "^6.1.0",
     "@types/glob": "^8.1.0",
     "shx": "^0.3.4"
