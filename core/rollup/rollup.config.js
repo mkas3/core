@@ -57,6 +57,6 @@ export default [
   {
     input,
     output: [{ file: pkg.types, format: 'esm' }],
-    plugins: [dts.default()]
+    plugins: [dts()]
   }
 ];
