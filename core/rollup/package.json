@@ -2,7 +2,7 @@
   "name": "@mkas3/rollup",
   "description": "Rollup builder",
   "license": "MIT",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "keywords": [
     "builder",
     "rollup"
@@ -58,7 +58,7 @@
   "devDependencies": {
     "@mkas3/eslint": "*",
     "@mkas3/prettier": "*",
-    "@mkas3/tsconfig": "^1.0.1",
+    "@mkas3/tsconfig": "^1.0.3",
     "@rollup/plugin-json": "^6.1.0",
     "@types/glob": "^8.1.0",
     "shx": "^0.3.4"
