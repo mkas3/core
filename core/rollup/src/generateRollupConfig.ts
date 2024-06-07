@@ -18,7 +18,7 @@ import type {
   RollupOptions
 } from 'rollup';
 import type { Options as RollupDtsOptions } from 'rollup-plugin-dts';
-import dts from 'rollup-plugin-dts';
+import { dts } from 'rollup-plugin-dts';
 
 export interface GenerateRollupConfigParams {
   pkg: {
