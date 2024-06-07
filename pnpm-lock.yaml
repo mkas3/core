@@ -148,8 +148,8 @@ importers:
         specifier: '*'
         version: 1.0.1(prettier@3.3.1)
       '@mkas3/tsconfig':
-        specifier: ^1.0.3
-        version: 1.0.3(typescript@5.4.5)
+        specifier: ^1.0.4
+        version: 1.0.4(typescript@5.4.5)
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.18.0)
@@ -940,8 +940,8 @@ packages:
     peerDependencies:
       prettier: ^3.3.1
 
-  '@mkas3/tsconfig@1.0.3':
-    resolution: {integrity: sha512-RzcCbY/rd3qFVEcy5S90Jo4ppdbpGAYjC/ErlGEllCOJv7ktWnzKexSZpBM7X0jHixIItA8Esk3CwbB5SKB33g==}
+  '@mkas3/tsconfig@1.0.4':
+    resolution: {integrity: sha512-6Z+fxsdy074zyE7uvTpotf9ojv9IrYE4Cr27wWpOTdZXfixvmXdfth2+H3TI+XPxuOfKyM7p/KId2xjCogE89Q==}
     peerDependencies:
       typescript: ^5.4.5
 
@@ -4438,7 +4438,7 @@ snapshots:
     dependencies:
       prettier: 3.3.1
 
-  '@mkas3/tsconfig@1.0.3(typescript@5.4.5)':
+  '@mkas3/tsconfig@1.0.4(typescript@5.4.5)':
     dependencies:
       typescript: 5.4.5
 
