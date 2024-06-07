@@ -2,6 +2,21 @@
   "name": "@mkas3/rollup",
   "entries": [
     {
+      "date": "Thu, 06 Jun 2024 23:32:29 GMT",
+      "version": "1.0.7",
+      "tag": "@mkas3/rollup_v1.0.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "madTwo.19@yandex.ru",
+            "package": "@mkas3/rollup",
+            "commit": "not available",
+            "comment": "fix: fix rollup typescript plugin (again)"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 06 Jun 2024 23:07:44 GMT",
       "version": "1.0.6",
       "tag": "@mkas3/rollup_v1.0.6",
