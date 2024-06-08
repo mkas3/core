@@ -49,12 +49,12 @@ export type GenerateRollupConfigParams = {
     module?: OutputOptions;
   };
   configs?: {
-    babel?: RollupBabelOptions;
-    dts?: RollupDtsOptions;
-    terser?: RollupTerserOptions;
-    commonJS?: RollupCommonJSOptions;
-    typescript?: RollupTypescriptOptions;
-    nodeResolve?: RollupNodeResolveOptions;
+    babel?: RollupConfigOptions<RollupBabelOptions>;
+    dts?: RollupConfigOptions<RollupDtsOptions>;
+    terser?: RollupConfigOptions<RollupTerserOptions>;
+    commonJS?: RollupConfigOptions<RollupCommonJSOptions>;
+    typescript?: RollupConfigOptions<RollupTypescriptOptions>;
+    nodeResolve?: RollupConfigOptions<RollupNodeResolveOptions>;
   };
 };
 
