@@ -32,18 +32,18 @@ export default [
     ],
     external: [...Object.keys(pkg.peerDependencies ?? {})],
     plugins: [
+      typescript({
+        tsconfig: './tsconfig.json',
+        compilerOptions: { noEmit: true },
+        noForceEmit: true,
+        tslib: 'tslib'
+      }),
       resolve({
         extensions: ['.js', '.ts']
       }),
       commonjs({
         include: /node_modules/,
         ignoreDynamicRequires: true
-      }),
-      typescript({
-        tsconfig: './tsconfig.json',
-        compilerOptions: { noEmit: true },
-        noForceEmit: true,
-        tslib: 'tslib'
       }),
       babel({
         exclude: /node_modules/,

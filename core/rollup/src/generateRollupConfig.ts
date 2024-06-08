@@ -78,7 +78,7 @@ export const generateRollupConfig = ({
     pattern = 'src/**/*.{ts,tsx}',
     ignorePattern = 'src/**/*.{test,stories}.{ts,tsx}'
   } = {},
-  sourcemap = true,
+  sourcemap = 'inline',
   external = [],
   options = [],
   plugins = [],
@@ -110,6 +110,7 @@ export const generateRollupConfig = ({
           dir: path.dirname(pkg.main),
           sourcemap,
           banner,
+          exports: 'named',
           ...output.main
         },
         {
@@ -117,11 +118,18 @@ export const generateRollupConfig = ({
           dir: path.dirname(pkg.module),
           sourcemap,
           banner,
+          exports: 'default',
           ...output.module
         }
       ],
       external: [...Object.keys(pkg.peerDependencies ?? {}), ...external],
       plugins: [
+        getRollupPlugin(typescript, configs.typescript, {
+          tsconfig: './tsconfig.json',
+          compilerOptions: { noEmit: true },
+          noForceEmit: true,
+          tslib: 'tslib'
+        }),
         getRollupPlugin(nodeResolve, configs.nodeResolve, {
           extensions: ['.js', '.jsx', '.ts', '.tsx']
         }),
@@ -130,21 +138,19 @@ export const generateRollupConfig = ({
           ignoreDynamicRequires: true
         }),
         ...plugins,
-        getRollupPlugin(typescript, configs.typescript, {
-          tsconfig: './tsconfig.json',
-          compilerOptions: { noEmit: true },
-          noForceEmit: true,
-          tslib: 'tslib'
-        }),
         getRollupPlugin(babel, configs.babel, {
           exclude: /node_modules/,
           babelHelpers: 'bundled',
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
           presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react']
         }),
-        getRollupPlugin(terser, configs.terser),
-        getRollupPlugin(dts, configs.dts)
+        getRollupPlugin(terser, configs.terser)
       ]
+    },
+    {
+      input: entry,
+      output: [{ file: pkg.types, format: 'esm', ...output?.types }],
+      plugins: [getRollupPlugin(dts, configs.dts)]
     },
     ...options
   ];
