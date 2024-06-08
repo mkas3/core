@@ -42,7 +42,8 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         compilerOptions: { noEmit: true },
-        noForceEmit: true
+        noForceEmit: true,
+        tslib: 'tslib'
       }),
       babel({
         exclude: /node_modules/,

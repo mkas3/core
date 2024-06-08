@@ -20,7 +20,11 @@ import type {
 import type { Options as RollupDtsOptions } from 'rollup-plugin-dts';
 import { dts } from 'rollup-plugin-dts';
 
-export interface GenerateRollupConfigParams {
+export type RollupConfigOptions<T> = T & {
+  disabled?: boolean;
+};
+
+export type GenerateRollupConfigParams = {
   pkg: {
     name: string;
     main: string;
@@ -52,14 +56,15 @@ export interface GenerateRollupConfigParams {
     typescript?: RollupTypescriptOptions;
     nodeResolve?: RollupNodeResolveOptions;
   };
-}
+};
 
 const getRollupPlugin = <Options = unknown>(
   pluginFn: (options?: Options) => RollupPlugin,
-  externalOptions?: Options,
+  externalOptions?: RollupConfigOptions<Options>,
   initialOptions?: Options
 ) => {
-  if (typeof externalOptions !== 'undefined' && !externalOptions) return false;
+  if (typeof externalOptions !== 'undefined' && (!externalOptions || externalOptions.disabled))
+    return false;
 
   return pluginFn({
     ...((typeof initialOptions === 'object' ? initialOptions : {}) as Options),
@@ -128,7 +133,8 @@ export const generateRollupConfig = ({
         getRollupPlugin(typescript, configs.typescript, {
           tsconfig: './tsconfig.json',
           compilerOptions: { noEmit: true },
-          noForceEmit: true
+          noForceEmit: true,
+          tslib: 'tslib'
         }),
         getRollupPlugin(babel, configs.babel, {
           exclude: /node_modules/,

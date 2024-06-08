@@ -112,7 +112,7 @@ importers:
         version: 7.24.7
       '@mkas3/tsconfig':
         specifier: ^1.0.3
-        version: 1.0.3(typescript@5.4.5)
+        version: link:../tsconfig
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.24.7)(rollup@4.18.0)
@@ -146,10 +146,10 @@ importers:
     devDependencies:
       '@mkas3/eslint':
         specifier: '*'
-        version: 1.0.2(@types/eslint@8.56.5)(eslint@8.57.0)(prettier@3.3.1)(tailwindcss@3.4.3(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.4.5)))(typescript@5.4.5)
+        version: link:../eslint
       '@mkas3/prettier':
         specifier: '*'
-        version: 1.0.1(prettier@3.3.1)
+        version: link:../prettier
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.18.0)
@@ -929,21 +929,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
-
-  '@mkas3/eslint@1.0.2':
-    resolution: {integrity: sha512-WgjFkfzbzeq7eLJftMSt9nNlitfxOM3iqT0nU090DK9BfhQDNjfggnNJfErhZBOCO4moqMmzvro146pfObI9dg==}
-    peerDependencies:
-      eslint: ^8.57.0
-
-  '@mkas3/prettier@1.0.1':
-    resolution: {integrity: sha512-UmL113voIM7jd64BN7Qc1kPuWgJNQHTYPTgysxG76qpbGidWHArsxmpLhDnfoaQItVELVOo6s78e4Y7tJ05uqg==}
-    peerDependencies:
-      prettier: ^3.3.1
-
-  '@mkas3/tsconfig@1.0.3':
-    resolution: {integrity: sha512-RzcCbY/rd3qFVEcy5S90Jo4ppdbpGAYjC/ErlGEllCOJv7ktWnzKexSZpBM7X0jHixIItA8Esk3CwbB5SKB33g==}
-    peerDependencies:
-      typescript: ^5.4.5
 
   '@next/eslint-plugin-next@14.2.3':
     resolution: {integrity: sha512-L3oDricIIjgj1AVnRdRor21gI7mShlSwU/1ZGHmqM3LzHhXXhdkrfeNY5zif25Bi5Dd7fiJHsbhoZCHfXYvlAw==}
@@ -4405,43 +4390,6 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.4.15
     optional: true
 
-  '@mkas3/eslint@1.0.2(@types/eslint@8.56.5)(eslint@8.57.0)(prettier@3.3.1)(tailwindcss@3.4.3(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.4.5)))(typescript@5.4.5)':
-    dependencies:
-      '@types/node': 20.14.2
-      '@typescript-eslint/eslint-plugin': 7.12.0(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.12.0(eslint@8.57.0)(typescript@5.4.5)
-      eslint: 8.57.0
-      eslint-config-airbnb: 19.0.4(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0))(eslint-plugin-jsx-a11y@6.8.0(eslint@8.57.0))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.0))(eslint-plugin-react@7.34.2(eslint@8.57.0))(eslint@8.57.0)
-      eslint-config-airbnb-typescript: 18.0.0(@typescript-eslint/eslint-plugin@7.12.0(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0))(eslint@8.57.0)
-      eslint-config-next: 14.2.3(eslint@8.57.0)(typescript@5.4.5)
-      eslint-config-prettier: 9.1.0(eslint@8.57.0)
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0)
-      eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)
-      eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
-      eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.5)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.1)
-      eslint-plugin-promise: 6.2.0(eslint@8.57.0)
-      eslint-plugin-react: 7.34.2(eslint@8.57.0)
-      eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
-      eslint-plugin-simple-import-sort: 12.1.0(eslint@8.57.0)
-      eslint-plugin-tailwindcss: 3.17.3(tailwindcss@3.4.3(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.4.5)))
-    transitivePeerDependencies:
-      - '@types/eslint'
-      - eslint-import-resolver-node
-      - eslint-import-resolver-webpack
-      - prettier
-      - supports-color
-      - tailwindcss
-      - typescript
-
-  '@mkas3/prettier@1.0.1(prettier@3.3.1)':
-    dependencies:
-      prettier: 3.3.1
-
-  '@mkas3/tsconfig@1.0.3(typescript@5.4.5)':
-    dependencies:
-      typescript: 5.4.5
-
   '@next/eslint-plugin-next@14.2.3':
     dependencies:
       glob: 10.3.10
@@ -5504,33 +5452,6 @@ snapshots:
       - supports-color
 
   eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
-    dependencies:
-      array-includes: 3.1.8
-      array.prototype.findlastindex: 1.2.3
-      array.prototype.flat: 1.3.2
-      array.prototype.flatmap: 1.3.2
-      debug: 3.2.7
-      doctrine: 2.1.0
-      eslint: 8.57.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
-      hasown: 2.0.2
-      is-core-module: 2.13.1
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.fromentries: 2.0.8
-      object.groupby: 1.0.1
-      object.values: 1.2.0
-      semver: 6.3.1
-      tsconfig-paths: 3.15.0
-    optionalDependencies:
-      '@typescript-eslint/parser': 7.12.0(eslint@8.57.0)(typescript@5.4.5)
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.3
@@ -7357,7 +7278,7 @@ snapshots:
   workspace-tools@0.36.4:
     dependencies:
       '@yarnpkg/lockfile': 1.1.0
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       git-url-parse: 13.1.1
       globby: 11.1.0
       jju: 1.4.0

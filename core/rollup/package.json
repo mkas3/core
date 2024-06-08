@@ -38,15 +38,17 @@
       "eslint -c .eslintrc.js --no-error-on-unmatched-pattern --fix"
     ]
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "tslib": "^2.6.3"
+  },
   "dependencies": {
-    "@mkas3/tsconfig": "^1.0.3",
     "@babel/core": "^7.24.7",
     "@babel/plugin-transform-runtime": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.24.7",
+    "@mkas3/tsconfig": "^1.0.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
