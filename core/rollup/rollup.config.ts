@@ -4,6 +4,7 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+import path from 'path';
 import { dts } from 'rollup-plugin-dts';
 
 import pkg from './package.json';
@@ -19,13 +20,13 @@ export default [
     output: [
       {
         format: 'cjs',
-        file: pkg.main,
+        dir: path.dirname(pkg.main),
         sourcemap,
         banner
       },
       {
         format: 'esm',
-        file: pkg.module,
+        dir: path.dirname(pkg.module),
         sourcemap,
         banner
       }
