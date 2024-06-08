@@ -27,7 +27,7 @@
     "stylelint": "turbo stylelint",
     "format": "turbo format",
     "lint": "turbo lint",
-    "deploying": "turbo deploy && pnpm change && pnpm release && pnpm sync",
+    "deploying": "turbo deploy && pnpm change && pnpm release && git pull",
     "change": "beachball change --no-commit",
     "release": "beachball publish --yes",
     "sync": "beachball sync",
