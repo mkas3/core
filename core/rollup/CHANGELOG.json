@@ -2,6 +2,27 @@
   "name": "@mkas3/rollup",
   "entries": [
     {
+      "date": "Sat, 08 Jun 2024 10:47:31 GMT",
+      "version": "1.0.18",
+      "tag": "@mkas3/rollup_v1.0.18",
+      "comments": {
+        "none": [
+          {
+            "author": "madTwo.19@yandex.ru",
+            "package": "@mkas3/rollup",
+            "commit": "not available",
+            "comment": "feat: add rollup disabled plugin option"
+          },
+          {
+            "author": "beachball",
+            "package": "@mkas3/rollup",
+            "comment": "Bump @mkas3/tsconfig to v1.0.4",
+            "commit": "not available"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Jun 2024 17:10:54 GMT",
       "version": "1.0.20",
       "tag": "@mkas3/rollup_v1.0.20",
