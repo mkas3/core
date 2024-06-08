@@ -95,7 +95,7 @@ export const generateRollupConfig = ({
     const tsconfig = fs.readFileSync(tsconfigPath, 'utf-8');
     if (!tsconfigRegex.test(tsconfig))
       throw new Error(
-        'Error: Please add "node_modules/**/*" to the "include" field in your tsconfig, as this is required for the dts plugin to work correctly. If you want to disable this error, turn off the dts plugin.'
+        'Please add "node_modules/**/*" to the "include" field in your tsconfig, as this is required for the dts plugin to work correctly. If you want to disable this error, turn off the dts plugin.'
       );
   }
 
