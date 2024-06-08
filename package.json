@@ -27,7 +27,7 @@
     "stylelint": "turbo stylelint",
     "format": "turbo format",
     "lint": "turbo lint",
-    "deploying": "turbo deploy",
+    "deploying": "turbo deploy && pnpm change && pnpm release",
     "change": "beachball change --no-commit",
     "release": "beachball publish --yes",
     "lint-staged": "lint-staged",
