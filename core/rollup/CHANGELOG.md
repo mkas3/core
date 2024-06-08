@@ -1,8 +1,17 @@
 # Change Log - @mkas3/rollup
 
-This log was last generated on Sat, 08 Jun 2024 11:02:30 GMT and should not be manually modified.
+This log was last generated on Sat, 08 Jun 2024 11:16:34 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.23
+
+Sat, 08 Jun 2024 11:16:34 GMT
+
+### Patches
+
+- fix: fix dts plugin (madTwo.19@yandex.ru)
+- Bump @mkas3/tsconfig to v1.0.4
 
 ## 1.0.22
 
