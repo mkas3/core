@@ -142,13 +142,9 @@ export const generateRollupConfig = ({
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
           presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react']
         }),
-        getRollupPlugin(terser, configs.terser)
+        getRollupPlugin(terser, configs.terser),
+        getRollupPlugin(dts, configs.dts)
       ]
-    },
-    {
-      input: entry,
-      output: [{ file: pkg.types, format: 'esm', ...output.types }],
-      plugins: [getRollupPlugin(dts, configs.dts)]
     },
     ...options
   ];
