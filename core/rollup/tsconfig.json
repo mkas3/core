@@ -3,7 +3,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Bundler"
   },
-  "include": ["node_modules/**/*", "**/*.ts"]
+  "include": ["node_modules/typescript", "**/*.ts"],
+  "exclude": ["node_modules"],
 }

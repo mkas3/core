@@ -8,7 +8,6 @@ import type { Options as RollupTerserOptions } from '@rollup/plugin-terser';
 import terser from '@rollup/plugin-terser';
 import type { RollupTypescriptOptions } from '@rollup/plugin-typescript';
 import typescript from '@rollup/plugin-typescript';
-import * as fs from 'fs';
 import { globSync } from 'glob';
 import { fileURLToPath } from 'node:url';
 import * as path from 'path';
@@ -26,7 +25,6 @@ export type RollupConfigOptions<T> = T & {
 };
 
 export type GenerateRollupConfigParams = {
-  tsconfigPath: string;
   pkg: {
     name: string;
     main: string;
@@ -36,6 +34,7 @@ export type GenerateRollupConfigParams = {
     peerDependencies?: Record<string, string>;
     [x: string]: unknown;
   };
+  tsconfigPath?: string;
   sourcemap?: boolean | 'inline' | 'hidden';
   external?: (string | RegExp)[];
   plugins?: InputPluginOption[];
@@ -60,8 +59,6 @@ export type GenerateRollupConfigParams = {
   };
 };
 
-const tsconfigRegex = /"include": \[.*"node_modules\/\*\*\/\*"/g;
-
 const getRollupPlugin = <Options = unknown>(
   pluginFn: (options?: Options) => RollupPlugin,
   externalOptions?: RollupConfigOptions<Options>,
@@ -77,7 +74,6 @@ const getRollupPlugin = <Options = unknown>(
 };
 
 export const generateRollupConfig = ({
-  tsconfigPath = './tsconfig.json',
   input: {
     entry = 'src/index.ts',
     pattern = 'src/**/*.{ts,tsx}',
@@ -91,14 +87,6 @@ export const generateRollupConfig = ({
   output = {},
   pkg
 }: GenerateRollupConfigParams) => {
-  if (!configs?.dts?.disabled) {
-    const tsconfig = fs.readFileSync(tsconfigPath, 'utf-8');
-    if (!tsconfigRegex.test(tsconfig))
-      throw new Error(
-        'Please add "node_modules/**/*" to the "include" field in your tsconfig, as this is required for the dts plugin to work correctly. If you want to disable this error, turn off the dts plugin.'
-      );
-  }
-
   const inputPattern = path.join(process.cwd(), pattern);
   const banner = `/* @license ${pkg.name} v${pkg.version} */`;
 
