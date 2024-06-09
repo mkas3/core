@@ -34,7 +34,6 @@ export type GenerateRollupConfigParams = {
     peerDependencies?: Record<string, string>;
     [x: string]: unknown;
   };
-  tsconfigPath?: string;
   sourcemap?: boolean | 'inline' | 'hidden';
   external?: (string | RegExp)[];
   plugins?: InputPluginOption[];
@@ -128,8 +127,7 @@ export const generateRollupConfig = ({
         getRollupPlugin(typescript, configs.typescript, {
           tsconfig: './tsconfig.json',
           compilerOptions: { noEmit: true },
-          noForceEmit: true,
-          tslib: 'tslib'
+          noForceEmit: true
         }),
         getRollupPlugin(nodeResolve, configs.nodeResolve, {
           extensions: ['.js', '.jsx', '.ts', '.tsx']
