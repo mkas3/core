@@ -1,4 +1,4 @@
-const { eslint } = require('core/eslint/index');
+const eslint = require('./.eslintrc.react');
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
