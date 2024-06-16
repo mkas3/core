@@ -11,7 +11,7 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['simple-import-sort', 'prettier'],
+  plugins: ['simple-import-sort', 'prettier', 'unused-imports'],
   ignorePatterns: ['dist'],
   parserOptions: {
     ecmaFeatures: { jsx: true },
@@ -19,14 +19,19 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    'no-nested-ternary': 'off',
     'consistent-return': 'off',
     'max-len': 'off',
     'no-param-reassign': 'warn',
     'no-console': ['warn', { allow: ['info', 'error'] }],
-    'require-await': 'error',
+    'require-await': 'off',
     'sort-imports': 'off',
 
-    'react/boolean-prop-naming': 'warn',
+    'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/no-unknown-property': 'off',
+    'react/boolean-prop-naming': 'off',
     'react/button-has-type': 'warn',
     'react/destructuring-assignment': 'warn',
     'react/function-component-definition': [
@@ -62,7 +67,7 @@ module.exports = {
     'react/jsx-indent': 'off',
     'react/jsx-newline': 'off',
     'react/jsx-no-constructed-context-values': 'warn',
-    'react/jsx-no-leaked-render': ['warn', { validStrategies: ['coerce'] }],
+    'react/jsx-no-leaked-render': ['warn', { validStrategies: ['ternary', 'coerce'] }],
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-sort-props': [
       'warn',
@@ -70,7 +75,7 @@ module.exports = {
         callbacksLast: true,
         shorthandLast: true,
         multiline: 'first',
-        reservedFirst: ['key', 'ref', 'className']
+        reservedFirst: ['key', 'ref']
       }
     ],
     'react/no-array-index-key': 'warn',
@@ -140,41 +145,7 @@ module.exports = {
           'error',
           { prefer: 'type-imports', disallowTypeAnnotations: false }
         ],
-        '@typescript-eslint/require-await': 'error',
-
-        'max-len': 'off',
-        'consistent-return': 'off',
-        'no-shadow': 'off',
-        'no-param-reassign': 'warn',
-        'no-console': ['warn', { allow: ['info', 'error'] }],
-        'sort-imports': 'off',
-        'require-await': 'error',
-
-        'import/order': 'off',
-        'import/extensions': 'off',
-        'import/prefer-default-export': 'off',
-        'import/no-extraneous-dependencies': 'off',
-
-        'simple-import-sort/exports': 'error',
-        'simple-import-sort/imports': [
-          'error',
-          {
-            groups: [
-              // External packages:
-              ['^@?\\w'],
-              // Internal packages:
-              ['^@(mkas3/core/.*|$)'],
-              // Alias imports:
-              ['^@(([\\/.]?\\w)|assets|test-utils)'],
-              // Side effect imports:
-              ['^\\u0000'],
-              // Parent imports:
-              ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-              // Other relative imports:
-              ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$']
-            ]
-          }
-        ]
+        '@typescript-eslint/require-await': 'error'
       }
     }
   ]
