@@ -11,7 +11,7 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['simple-import-sort', 'prettier', 'unused-imports'],
+  plugins: ['simple-import-sort', 'prettier'],
   ignorePatterns: ['dist'],
   parserOptions: {
     ecmaFeatures: { jsx: true },

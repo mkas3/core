@@ -15,7 +15,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:tailwindcss/recommended'
   ],
-  plugins: ['simple-import-sort', 'prettier', 'tailwindcss', 'unused-imports'],
+  plugins: ['simple-import-sort', 'prettier', 'tailwindcss'],
   ignorePatterns: ['dist'],
   parserOptions: {
     ecmaFeatures: { jsx: true },
