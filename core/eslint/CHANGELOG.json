@@ -2,6 +2,21 @@
   "name": "@mkas3/eslint",
   "entries": [
     {
+      "date": "Sun, 16 Jun 2024 14:41:42 GMT",
+      "version": "1.1.0",
+      "tag": "@mkas3/eslint_v1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "madTwo.19@yandex.ru",
+            "package": "@mkas3/eslint",
+            "commit": "not available",
+            "comment": "feat: no-unused-imports plugin to eslint; refactor"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 06 Jun 2024 19:28:23 GMT",
       "version": "1.0.2",
       "tag": "@mkas3/eslint_v1.0.2",
