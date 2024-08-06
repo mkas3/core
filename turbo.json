@@ -15,6 +15,9 @@
     "lint": {},
     "pretty": {},
     "deploy": {
+      "dependsOn": ["stylelint", "format", "lint", "pretty"]
+    },
+    "deploy:build": {
       "dependsOn": ["build", "stylelint", "format", "lint", "pretty"]
     },
     "dev": {

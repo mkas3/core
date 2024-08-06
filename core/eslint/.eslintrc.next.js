@@ -31,6 +31,7 @@ module.exports = {
     'consistent-return': 'off',
     'max-len': 'off',
     'no-param-reassign': 'warn',
+    'no-unused-vars': 'off',
     'no-console': ['warn', { allow: ['info', 'error'] }],
     'require-await': 'off',
     'sort-imports': 'off',
@@ -145,6 +146,12 @@ module.exports = {
       ],
       rules: {
         '@typescript-eslint/no-shadow': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/restrict-template-expressions': [
           'warn',
           { allowBoolean: true, allowNullish: true }
