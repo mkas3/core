@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Tue, 06 Aug 2024 09:16:39 GMT and should not be manually modified.
+This log was last generated on Tue, 06 Aug 2024 09:56:27 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.0
+
+Tue, 06 Aug 2024 09:56:27 GMT
+
+### Minor changes
+
+- fix: fix import rules (madTwo.19@yandex.ru)
 
 ## 1.2.3
 
