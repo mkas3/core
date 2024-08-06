@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Tue, 06 Aug 2024 09:11:31 GMT and should not be manually modified.
+This log was last generated on Tue, 06 Aug 2024 09:16:39 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.3
+
+Tue, 06 Aug 2024 09:16:39 GMT
+
+### Patches
+
+- fix: remove react config from index (madTwo.19@yandex.ru)
 
 ## 1.2.2
 
