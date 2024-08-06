@@ -145,6 +145,11 @@ module.exports = {
         'plugin:prettier/recommended'
       ],
       rules: {
+        'import/order': 'off',
+        'import/extensions': 'off',
+        'import/prefer-default-export': 'off',
+        'import/no-extraneous-dependencies': 'off',
+
         '@typescript-eslint/no-shadow': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
         '@typescript-eslint/no-unsafe-call': 'off',
