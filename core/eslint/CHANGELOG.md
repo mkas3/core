@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Tue, 06 Aug 2024 08:43:56 GMT and should not be manually modified.
+This log was last generated on Tue, 06 Aug 2024 09:11:31 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.2
+
+Tue, 06 Aug 2024 09:11:31 GMT
+
+### Patches
+
+- chore: eslint 1.2.1 (madTwo.19@yandex.ru)
 
 ## 1.2.0
 
