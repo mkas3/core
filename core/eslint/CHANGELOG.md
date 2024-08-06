@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Sun, 16 Jun 2024 14:41:42 GMT and should not be manually modified.
+This log was last generated on Tue, 06 Aug 2024 08:43:56 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.0
+
+Tue, 06 Aug 2024 08:43:56 GMT
+
+### Minor changes
+
+- feat: update rules & delete react (madTwo.19@yandex.ru)
 
 ## 1.1.0
 
