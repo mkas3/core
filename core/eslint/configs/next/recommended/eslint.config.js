@@ -4,7 +4,29 @@ const tailwind = require('eslint-plugin-tailwindcss');
 module.exports = antfu({
   typescript: {
     overrides: {
-      'ts/consistent-type-definitions': ['error', 'type']
+      'ts/consistent-type-definitions': ['error', 'type'],
+
+      'import/order': [
+        'error',
+        {
+          groups: [
+            // External packages:
+            ['^react', 'next', '^@?\\w'],
+            // Internal packages:
+            ['^@(mkas3/core/.*|$)'],
+            // Alias imports:
+            ['^@(([\\/.]?\\w))'],
+            // Side effect imports:
+            ['^\\u0000'],
+            // Parent imports:
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+            // Other relative imports:
+            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+            // Style imports:
+            ['^.+\\.s?css$']
+          ]
+        }
+      ]
     }
   },
   react: {
