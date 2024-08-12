@@ -200,7 +200,6 @@ module.exports = antfu({
           styledComponents: true,
           destructureOnly: false,
           ignorePattern: [],
-          customIgnore: [],
           groups: ['id', 'boolean', 'className', 'unknown', 'callback'],
           customGroups: {
             id: 'id',
