@@ -1,5 +1,5 @@
-import configs from './configs';
+const configs = require('./configs');
 
-export default {
+module.exports = {
   configs
 };

@@ -2,11 +2,11 @@
   "name": "@mkas3/eslint",
   "description": "Eslint configs",
   "license": "MIT",
-  "type": "module",
   "version": "2.0.2",
   "keywords": [
     "config",
-    "eslint"
+    "eslint",
+    "eslint-config"
   ],
   "author": {
     "name": "mkas3 📛",
@@ -24,15 +24,15 @@
     "access": "public"
   },
   "files": [
-    "configs/next/recommended/eslint.config.js"
+    "configs"
   ],
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"*.js\"",
-    "inspect": "pnpx @eslint/config-inspector@latest"
+    "dev": "npx @eslint/config-inspector@latest --config configs/next/recommended/eslint.config.js",
+    "format": "prettier --write \"*.js\""
   },
   "lint-staged": {
-    "*.js": "prettier --write"
+    "*.ts": "prettier --write"
   },
   "peerDependencies": {
     "eslint": ">= 9"

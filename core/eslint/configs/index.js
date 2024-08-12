@@ -1,3 +1,3 @@
-import nextConfigs from './next';
+const nextConfigs = require('./next');
 
-export default { next: nextConfigs };
+module.exports = { next: nextConfigs };
