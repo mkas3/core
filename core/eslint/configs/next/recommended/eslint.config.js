@@ -1,4 +1,4 @@
-const antfu = require('@antfu/eslint-config');
+const { antfu } = require('@antfu/eslint-config');
 
 module.exports = antfu({
   react: true
