@@ -6,27 +6,11 @@ module.exports = antfu({
     overrides: {
       'ts/consistent-type-definitions': ['error', 'type'],
 
-      'import/order': [
-        'error',
-        {
-          groups: [
-            // External packages:
-            ['^react', 'next', '^@?\\w'],
-            // Internal packages:
-            ['^@(mkas3/core/.*|$)'],
-            // Alias imports:
-            ['^@(([\\/.]?\\w))'],
-            // Side effect imports:
-            ['^\\u0000'],
-            // Parent imports:
-            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-            // Other relative imports:
-            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-            // Style imports:
-            ['^.+\\.s?css$']
-          ]
-        }
-      ]
+      'import/order': 'off',
+      'sort-imports': 'off',
+      'perfectionist/sort-imports': 'error',
+      'perfectionist/sort-named-imports': 'error',
+      'perfectionist/sort-exports': 'error'
     }
   },
   react: {
