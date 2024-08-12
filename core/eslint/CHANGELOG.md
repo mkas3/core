@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Mon, 12 Aug 2024 22:18:29 GMT and should not be manually modified.
+This log was last generated on Mon, 12 Aug 2024 22:21:24 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.2.13
+
+Mon, 12 Aug 2024 22:21:24 GMT
+
+### Patches
+
+- fix: fix types (madTwo.19@yandex.ru)
 
 ## 2.2.12
 
