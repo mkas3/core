@@ -2,6 +2,7 @@
   "name": "@mkas3/eslint",
   "description": "Eslint configs",
   "license": "MIT",
+  "type": "module",
   "version": "2.0.1",
   "keywords": [
     "config",
@@ -23,7 +24,7 @@
     "access": "public"
   },
   "files": [
-    "next/eslint.config.mjs"
+    "configs/next/recommended/eslint.config.js"
   ],
   "main": "index.js",
   "scripts": {
@@ -32,6 +33,9 @@
   },
   "lint-staged": {
     "*.js": "prettier --write"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.25.1",

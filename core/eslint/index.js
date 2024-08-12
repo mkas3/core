@@ -1,3 +1,5 @@
-const eslintNextConfig = require('./next/eslint.config.mjs');
+import configs from './configs';
 
-module.exports = { next: eslintNextConfig };
+export default {
+  configs
+};
