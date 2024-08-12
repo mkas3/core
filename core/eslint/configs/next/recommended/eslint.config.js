@@ -4,7 +4,21 @@ const tailwind = require('eslint-plugin-tailwindcss');
 module.exports = antfu({
   typescript: {
     overrides: {
-      'ts/consistent-type-definitions': ['error', 'type']
+      'ts/consistent-type-definitions': ['error', 'type'],
+      'ts/strict-boolean-expressions': [
+        'warn',
+        {
+          allowString: true,
+          allowNumber: true,
+          allowNullableObject: true,
+          allowNullableBoolean: true,
+          allowNullableString: true,
+          allowNullableNumber: true,
+          allowNullableEnum: true,
+          allowAny: false,
+          allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false
+        }
+      ]
     }
   },
   react: {
@@ -199,11 +213,13 @@ module.exports = antfu({
           styledComponents: true,
           destructureOnly: false,
           ignorePattern: [],
-          groups: ['id', 'boolean', 'className', 'unknown', 'callback'],
+          groups: ['key', 'id', 'className', 'otherClassName', 'unknown', 'children', 'callback'],
           customGroups: {
             id: 'id',
-            className: '*ClassName',
-            boolean: 'is*',
+            key: 'key',
+            className: 'className',
+            otherClassName: '*ClassName',
+            children: 'children',
             callback: 'on*'
           }
         }
