@@ -3,6 +3,7 @@ const tailwind = require('eslint-plugin-tailwindcss');
 
 module.exports = antfu({
   typescript: {
+    tsconfigPath: './tsconfig.json',
     overrides: {
       'ts/consistent-type-definitions': ['error', 'type']
     }
@@ -13,7 +14,6 @@ module.exports = antfu({
 
       'react/no-class-component': 'error',
       'react/no-default-props': 'error',
-      'react/no-leaked-conditional-rendering': 'warn',
       'react/no-missing-component-display-name': 'warn',
       'react/no-prop-types': 'error',
 
