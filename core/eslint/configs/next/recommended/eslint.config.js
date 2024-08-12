@@ -3,7 +3,7 @@ const tailwind = require('eslint-plugin-tailwindcss');
 
 module.exports = antfu({
   typescript: {
-    tsconfigPath: './tsconfig.json',
+    tsconfigPath: 'tsconfig.json',
     overrides: {
       'ts/consistent-type-definitions': ['error', 'type']
     }
