@@ -32,7 +32,7 @@ module.exports = antfu({
           multilineDetection: 'brackets'
         }
       ],
-      'style/arrow-parens': ['always']
+      'style/arrow-parens': ['error', 'always']
     }
   }
 });
