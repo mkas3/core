@@ -32,6 +32,7 @@ module.exports = antfu({
           multilineDetection: 'brackets'
         }
       ],
+      'style/jsx-quotes': ['error', 'prefer-single'],
       'style/arrow-parens': ['error', 'always']
     }
   }
