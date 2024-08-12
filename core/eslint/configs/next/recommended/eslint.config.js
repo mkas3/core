@@ -1,17 +1,16 @@
 const { antfu } = require('@antfu/eslint-config');
 
 module.exports = antfu({
-  javascript: {
-    overrides: {
-      'antfu/top-level-function': 'off'
-    }
-  },
   typescript: {
     overrides: {
       'ts/consistent-type-definitions': ['error', 'type']
     }
   },
-  react: true,
+  react: {
+    overrides: {
+      'antfu/top-level-function': 'off'
+    }
+  },
   stylistic: {
     quotes: 'single',
     jsx: true,
