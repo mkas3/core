@@ -41,6 +41,7 @@
     "@antfu/eslint-config": "^2.25.1",
     "@eslint-react/eslint-plugin": "^1.10.0",
     "eslint": "^9.9.0",
-    "eslint-plugin-react-refresh": "^0.4.9"
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-react-hooks": "5.1.0-beta-26f2496093-20240514"
   }
 }
