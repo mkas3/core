@@ -2,6 +2,21 @@
   "name": "@mkas3/eslint",
   "entries": [
     {
+      "date": "Mon, 12 Aug 2024 16:39:35 GMT",
+      "version": "2.0.0",
+      "tag": "@mkas3/eslint_v2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "madTwo.19@yandex.ru",
+            "package": "@mkas3/eslint",
+            "commit": "not available",
+            "comment": "feat: move to antfu eslint config v9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 06 Aug 2024 09:56:27 GMT",
       "version": "1.3.0",
       "tag": "@mkas3/eslint_v1.3.0",
