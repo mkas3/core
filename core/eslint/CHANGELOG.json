@@ -2,6 +2,21 @@
   "name": "@mkas3/eslint",
   "entries": [
     {
+      "date": "Mon, 12 Aug 2024 18:20:17 GMT",
+      "version": "2.0.6",
+      "tag": "@mkas3/eslint_v2.0.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "madTwo.19@yandex.ru",
+            "package": "@mkas3/eslint",
+            "commit": "not available",
+            "comment": "fix: fix config"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Aug 2024 18:16:54 GMT",
       "version": "2.0.5",
       "tag": "@mkas3/eslint_v2.0.5",
