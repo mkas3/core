@@ -1,4 +1,3 @@
-const eslintNext = require('./.eslintrc.next.js');
-const eslintNode = require('./.eslintrc.node.js');
+const eslintNextConfig = require('./next/eslint.config.mjs');
 
-module.exports = { eslint: { next: eslintNext, node: eslintNode } };
+module.exports = { next: eslintNextConfig };
