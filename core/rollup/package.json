@@ -2,7 +2,7 @@
   "name": "@mkas3/rollup",
   "description": "Rollup builder",
   "license": "MIT",
-  "version": "1.0.63",
+  "version": "1.0.64",
   "keywords": [
     "builder",
     "rollup"

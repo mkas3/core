@@ -2,7 +2,7 @@
   "name": "@mkas3/eslint",
   "description": "Eslint configs",
   "license": "MIT",
-  "version": "2.2.14",
+  "version": "2.2.15",
   "keywords": [
     "config",
     "eslint",
