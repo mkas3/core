@@ -159,8 +159,9 @@ module.exports = antfu({
           order: 'asc',
           ignoreCase: true,
           ignorePattern: [],
-          groups: ['ref', 'className', 'otherClassName', 'unknown', 'shorthand', 'callback'],
+          groups: ['key', 'ref', 'className', 'otherClassName', 'unknown', 'shorthand', 'callback'],
           customGroups: {
+            key: 'key',
             ref: 'ref',
             className: 'className',
             otherClassName: '*ClassName',
