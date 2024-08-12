@@ -233,4 +233,6 @@ module.exports = antfu({
       ]
     }
   }
-}).append(...tailwind.configs['flat/recommended']);
+})
+  .append(...tailwind.configs['flat/recommended'])
+  .toConfigs();

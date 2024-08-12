@@ -1,7 +1,7 @@
-import { Linter } from 'eslint';
+import { TypedFlatConfigItem } from '@antfu/eslint-config';
 
 declare const configs: {
   next: {
-    recommended: Linter.Config;
+    recommended: Promise<TypedFlatConfigItem[]>;
   };
 };
