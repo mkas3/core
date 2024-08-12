@@ -2,6 +2,21 @@
   "name": "@mkas3/rollup",
   "entries": [
     {
+      "date": "Mon, 12 Aug 2024 22:18:29 GMT",
+      "version": "1.0.61",
+      "tag": "@mkas3/rollup_v1.0.61",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@mkas3/rollup",
+            "comment": "Bump @mkas3/tsconfig to v1.0.4",
+            "commit": "not available"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Aug 2024 22:05:09 GMT",
       "version": "1.0.60",
       "tag": "@mkas3/rollup_v1.0.60",
