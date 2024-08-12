@@ -1,4 +1,5 @@
 const { antfu } = require('@antfu/eslint-config');
+const tailwind = require('eslint-plugin-tailwindcss');
 
 module.exports = antfu({
   typescript: {
@@ -36,4 +37,4 @@ module.exports = antfu({
       'style/arrow-parens': ['error', 'always']
     }
   }
-});
+}).append(...tailwind.configs['flat/recommended']);
