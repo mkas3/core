@@ -1,8 +1,16 @@
 # Change Log - @mkas3/rollup
 
-This log was last generated on Mon, 12 Aug 2024 16:39:35 GMT and should not be manually modified.
+This log was last generated on Mon, 12 Aug 2024 16:43:37 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.38
+
+Mon, 12 Aug 2024 16:43:37 GMT
+
+### Patches
+
+- Bump @mkas3/tsconfig to v1.0.4
 
 ## 1.0.37
 
