@@ -20,6 +20,7 @@ module.exports = antfu({
     overrides: {
       'style/comma-dangle': ['error', 'never'],
       'style/member-delimiter-style': [
+        'error',
         {
           multiline: {
             delimiter: 'semi',
