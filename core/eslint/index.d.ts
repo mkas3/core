@@ -1,9 +1,7 @@
-import { antfu } from '@antfu/eslint-config';
-
-export type Config = ReturnType<typeof antfu>;
+import { Linter } from 'eslint';
 
 declare const configs: {
   next: {
-    recommended: Config;
+    recommended: Linter.Config;
   };
 };

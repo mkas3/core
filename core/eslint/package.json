@@ -37,6 +37,7 @@
     "*.ts": "prettier --write"
   },
   "peerDependencies": {
+    "@antfu/eslint-config": "^2.25.1",
     "eslint": ">= 9"
   },
   "dependencies": {
