@@ -252,7 +252,7 @@ module.exports = antfu(
       }
     }
   },
-  fixupConfigRules(
+  ...fixupConfigRules(
     compat.config({
       extends: ['plugin:@next/next/core-web-vitals']
     })
