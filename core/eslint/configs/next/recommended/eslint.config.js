@@ -6,6 +6,51 @@ const reactHooksPlugin = require('eslint-plugin-react-hooks');
 
 const compat = new FlatCompat();
 
+let nextConfigs = fixupConfigRules(
+  compat.config({
+    extends: ['plugin:@next/next/core-web-vitals']
+  })
+).map((config, index) =>
+  index === 0
+    ? { ...config, name: 'mkas3/next/rules' }
+    : { ...config, name: 'mkas3/next/rules/web-vitals' }
+);
+
+nextConfigs = [{ name: 'mkas3/next/setup', plugins: nextConfigs[0].plugins }, ...nextConfigs];
+
+nextConfigs = nextConfigs.map((config, index) =>
+  index >= 1
+    ? {
+        ...config,
+        files: ['**/*.?([cm])[jt]s?(x)'],
+        plugins: [],
+        languageOptions: {
+          parser: 'typescript-eslint/parser',
+          parserOptions: {
+            ecmaFeatures: {
+              jsx: true
+            }
+          },
+          sourceType: 'module'
+        }
+      }
+    : config
+);
+
+let tailwindConfigs = tailwind.configs['flat/recommended']
+  .map((config) => ({
+    ...config,
+    name: config.name === 'tailwindcss:base' ? 'mkas3/tailwindcss/base' : 'mkas3/tailwindcss/rules'
+  }))
+  .map((config) => ({ ...config, files: ['**/*.?([cm])[jt]s?(x)'] }));
+
+tailwindConfigs = tailwindConfigs.with(1, {
+  ...tailwindConfigs[1],
+  languageOptions: tailwindConfigs[0].languageOptions
+});
+
+tailwindConfigs = tailwindConfigs.with(0, { ...tailwindConfigs[0], languageOptions: undefined });
+
 module.exports = antfu(
   {
     typescript: {
@@ -252,16 +297,16 @@ module.exports = antfu(
       }
     }
   },
-  ...fixupConfigRules(
-    compat.config({
-      extends: ['plugin:@next/next/core-web-vitals']
-    })
-  ),
-  ...tailwind.configs['flat/recommended']
-).override('antfu/react/setup', (config) => ({
-  ...config,
-  plugins: {
-    ...config.plugins,
-    'react-hooks': fixupPluginRules(reactHooksPlugin)
-  }
-}));
+  ...nextConfigs,
+  ...tailwindConfigs
+)
+  .renamePlugins({
+    '@next/next': 'next'
+  })
+  .override('antfu/react/setup', (config) => ({
+    ...config,
+    plugins: {
+      ...config.plugins,
+      'react-hooks': fixupPluginRules(reactHooksPlugin)
+    }
+  }));
