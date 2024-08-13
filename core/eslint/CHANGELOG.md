@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Tue, 13 Aug 2024 10:01:09 GMT and should not be manually modified.
+This log was last generated on Tue, 13 Aug 2024 10:05:10 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.3.13
+
+Tue, 13 Aug 2024 10:05:10 GMT
+
+### Patches
+
+- fix: downgrade dep (react-hooks) (madTwo.19@yandex.ru)
 
 ## 2.3.12
 
