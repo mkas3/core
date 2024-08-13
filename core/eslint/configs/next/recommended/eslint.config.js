@@ -257,7 +257,7 @@ module.exports = antfu(
       extends: ['plugin:@next/next/core-web-vitals']
     })
   ),
-  tailwind.configs['flat/recommended']
+  ...tailwind.configs['flat/recommended']
 ).override('antfu/react/setup', (config) => ({
   ...config,
   plugins: {
