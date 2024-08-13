@@ -1,250 +1,265 @@
 const { FlatCompat } = require('@eslint/eslintrc');
 const { antfu } = require('@antfu/eslint-config');
 const tailwind = require('eslint-plugin-tailwindcss');
-const { fixupConfigRules } = require('@eslint/compat');
+const { fixupPluginRules } = require('@eslint/compat');
+const reactHooksPlugin = require('eslint-plugin-react-hooks');
 
 const compat = new FlatCompat();
 
-module.exports = antfu({
-  ...fixupConfigRules(
-    compat.config({
-      extends: ['plugin:@next/next/core-web-vitals']
-    })
-  ),
-  ...tailwind.configs['flat/recommended'],
-  typescript: {
-    overrides: {
-      'ts/consistent-type-definitions': ['error', 'type'],
-      'ts/strict-boolean-expressions': 'off'
-    }
-  },
-  react: {
-    overrides: {
-      'antfu/top-level-function': 'off',
+module.exports = antfu(
+  {
+    typescript: {
+      overrides: {
+        'ts/consistent-type-definitions': ['error', 'type'],
+        'ts/strict-boolean-expressions': 'off'
+      }
+    },
+    react: {
+      overrides: {
+        'antfu/top-level-function': 'off',
 
-      'react/no-class-component': 'error',
-      'react/no-default-props': 'error',
-      'react/no-missing-component-display-name': 'warn',
-      'react/no-prop-types': 'error',
+        'react/no-class-component': 'error',
+        'react/no-default-props': 'error',
+        'react/no-missing-component-display-name': 'warn',
+        'react/no-prop-types': 'error',
 
-      'react-hooks-extra/ensure-custom-hooks-using-other-hooks': 'warn',
-      'react-hooks-extra/ensure-use-callback-has-non-empty-deps': 'warn',
-      'react-hooks-extra/ensure-use-memo-has-non-empty-deps': 'warn',
-      'react-hooks-extra/no-direct-set-state-in-use-effect': 'warn',
-      'react-hooks-extra/no-direct-set-state-in-use-layout-effect': 'warn',
-      'react-hooks-extra/prefer-use-state-lazy-initialization': 'warn',
-      'react-naming-convention/component-name': ['warn', 'PascalCase'],
-      'react-naming-convention/filename': ['warn', 'kebab-case'],
-      'react-naming-convention/use-state': 'warn'
-    }
-  },
-  stylistic: {
-    quotes: 'single',
-    jsx: true,
-    indent: 2,
-    semi: true,
-    overrides: {
-      'style/comma-dangle': ['error', 'never'],
-      'style/member-delimiter-style': [
-        'error',
-        {
-          multiline: {
-            delimiter: 'semi',
-            requireLast: true
-          },
-          singleline: {
-            delimiter: 'semi',
-            requireLast: false
-          },
-          multilineDetection: 'brackets'
-        }
-      ],
-      'style/jsx-quotes': ['error', 'prefer-single'],
-      'style/arrow-parens': ['error', 'always'],
-
-      'import/order': 'off',
-      'sort-imports': 'off',
-
-      'perfectionist/sort-imports': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          internalPattern: ['~/**'],
-          newlinesBetween: 'always',
-          maxLineLength: undefined,
-          groups: [
-            'react-type',
-            'next-type',
-            'type',
-            'internal-type',
-            'parent-type',
-            'sibling-type',
-            'index-type',
-            'react',
-            'next',
-            'builtin',
-            'external',
-            'alias-app',
-            'alias-components',
-            'alias-lib',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-            'side-effect',
-            'side-effect-style',
-            'style',
-            'object',
-            'unknown'
-          ],
-          customGroups: {
-            value: {
-              react: ['react', 'react-*', 'react/*'],
-              next: ['next', 'next-*', 'next/*'],
-              'alias-app': ['@/app/*'],
-              'alias-components': ['@/components/*'],
-              'alias-lib': ['@/lib/*', '@/utils/*']
+        'react-hooks-extra/ensure-custom-hooks-using-other-hooks': 'warn',
+        'react-hooks-extra/ensure-use-callback-has-non-empty-deps': 'warn',
+        'react-hooks-extra/ensure-use-memo-has-non-empty-deps': 'warn',
+        'react-hooks-extra/no-direct-set-state-in-use-effect': 'warn',
+        'react-hooks-extra/no-direct-set-state-in-use-layout-effect': 'warn',
+        'react-hooks-extra/prefer-use-state-lazy-initialization': 'warn',
+        'react-naming-convention/component-name': ['warn', 'PascalCase'],
+        'react-naming-convention/filename': ['warn', 'kebab-case'],
+        'react-naming-convention/use-state': 'warn'
+      }
+    },
+    stylistic: {
+      quotes: 'single',
+      jsx: true,
+      indent: 2,
+      semi: true,
+      overrides: {
+        'style/comma-dangle': ['error', 'never'],
+        'style/member-delimiter-style': [
+          'error',
+          {
+            multiline: {
+              delimiter: 'semi',
+              requireLast: true
             },
-            type: {
-              'react-type': ['react', 'react-*', 'react/*'],
-              'next-type': ['next', 'next-*', 'next/*']
+            singleline: {
+              delimiter: 'semi',
+              requireLast: false
+            },
+            multilineDetection: 'brackets'
+          }
+        ],
+        'style/jsx-quotes': ['error', 'prefer-single'],
+        'style/arrow-parens': ['error', 'always'],
+
+        'import/order': 'off',
+        'sort-imports': 'off',
+
+        'perfectionist/sort-imports': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            internalPattern: ['~/**'],
+            newlinesBetween: 'always',
+            maxLineLength: undefined,
+            groups: [
+              'react-type',
+              'next-type',
+              'type',
+              'internal-type',
+              'parent-type',
+              'sibling-type',
+              'index-type',
+              'react',
+              'next',
+              'builtin',
+              'external',
+              'alias-app',
+              'alias-components',
+              'alias-lib',
+              'internal',
+              'parent',
+              'sibling',
+              'index',
+              'side-effect',
+              'side-effect-style',
+              'style',
+              'object',
+              'unknown'
+            ],
+            customGroups: {
+              value: {
+                react: ['react', 'react-*', 'react/*'],
+                next: ['next', 'next-*', 'next/*'],
+                'alias-app': ['@/app/*'],
+                'alias-components': ['@/components/*'],
+                'alias-lib': ['@/lib/*', '@/utils/*']
+              },
+              type: {
+                'react-type': ['react', 'react-*', 'react/*'],
+                'next-type': ['next', 'next-*', 'next/*']
+              }
             }
           }
-        }
-      ],
-      'perfectionist/sort-named-imports': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreAlias: false,
-          ignoreCase: true,
-          groupKind: 'types-first'
-        }
-      ],
-      'perfectionist/sort-exports': [
-        'error',
-        { type: 'alphabetical', order: 'asc', ignoreCase: true }
-      ],
-      'perfectionist/sort-named-exports': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          groupKind: 'types-first'
-        }
-      ],
-
-      'perfectionist/sort-array-includes': 'error',
-      'perfectionist/sort-intersection-types': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          groups: [
-            'keyword',
-            'literal',
-            'named',
-            ['tuple', 'union', 'intersection'],
-            'object',
-            'function',
-            'operator',
-            'conditional',
-            'import',
-            'nullish',
-            'unknown'
-          ]
-        }
-      ],
-
-      'style/jsx-sort-props': 'off',
-      'perfectionist/sort-jsx-props': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          ignorePattern: [],
-          groups: ['key', 'ref', 'className', 'otherClassName', 'unknown', 'shorthand', 'callback'],
-          customGroups: {
-            key: 'key',
-            ref: 'ref',
-            className: 'className',
-            otherClassName: '*ClassName',
-            callback: 'on*'
+        ],
+        'perfectionist/sort-named-imports': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreAlias: false,
+            ignoreCase: true,
+            groupKind: 'types-first'
           }
-        }
-      ],
-
-      'ts/adjacent-overload-signatures': 'off',
-      'perfectionist/sort-object-types': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          partitionByNewLine: true,
-          groupKind: 'required-first',
-          groups: ['id', 'boolean', 'className', 'unknown', 'callback'],
-          customGroups: {
-            id: 'id',
-            className: '*ClassName',
-            boolean: 'is*',
-            callback: 'on*'
+        ],
+        'perfectionist/sort-exports': [
+          'error',
+          { type: 'alphabetical', order: 'asc', ignoreCase: true }
+        ],
+        'perfectionist/sort-named-exports': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            groupKind: 'types-first'
           }
-        }
-      ],
+        ],
 
-      'sort-keys': 'off',
-      'perfectionist/sort-objects': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          partitionByComment: false,
-          partitionByNewLine: true,
-          styledComponents: true,
-          destructureOnly: false,
-          ignorePattern: [],
-          groups: ['key', 'id', 'className', 'otherClassName', 'unknown', 'children', 'callback'],
-          customGroups: {
-            id: 'id',
-            key: 'key',
-            className: 'className',
-            otherClassName: '*ClassName',
-            children: 'children',
-            callback: 'on*'
+        'perfectionist/sort-array-includes': 'error',
+        'perfectionist/sort-intersection-types': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            groups: [
+              'keyword',
+              'literal',
+              'named',
+              ['tuple', 'union', 'intersection'],
+              'object',
+              'function',
+              'operator',
+              'conditional',
+              'import',
+              'nullish',
+              'unknown'
+            ]
           }
-        }
-      ],
+        ],
 
-      'ts/sort-type-constituents': 'off',
-      'perfectionist/sort-union-types': [
-        'error',
-        {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          groups: [
-            'keyword',
-            'literal',
-            'named',
-            ['tuple', 'union', 'intersection'],
-            'object',
-            'function',
-            'operator',
-            'conditional',
-            'import',
-            'nullish',
-            'unknown'
-          ]
-        }
-      ]
+        'style/jsx-sort-props': 'off',
+        'perfectionist/sort-jsx-props': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            ignorePattern: [],
+            groups: [
+              'key',
+              'ref',
+              'className',
+              'otherClassName',
+              'unknown',
+              'shorthand',
+              'callback'
+            ],
+            customGroups: {
+              key: 'key',
+              ref: 'ref',
+              className: 'className',
+              otherClassName: '*ClassName',
+              callback: 'on*'
+            }
+          }
+        ],
+
+        'ts/adjacent-overload-signatures': 'off',
+        'perfectionist/sort-object-types': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            partitionByNewLine: true,
+            groupKind: 'required-first',
+            groups: ['id', 'boolean', 'className', 'unknown', 'callback'],
+            customGroups: {
+              id: 'id',
+              className: '*ClassName',
+              boolean: 'is*',
+              callback: 'on*'
+            }
+          }
+        ],
+
+        'sort-keys': 'off',
+        'perfectionist/sort-objects': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            partitionByComment: false,
+            partitionByNewLine: true,
+            styledComponents: true,
+            destructureOnly: false,
+            ignorePattern: [],
+            groups: ['key', 'id', 'className', 'otherClassName', 'unknown', 'children', 'callback'],
+            customGroups: {
+              id: 'id',
+              key: 'key',
+              className: 'className',
+              otherClassName: '*ClassName',
+              children: 'children',
+              callback: 'on*'
+            }
+          }
+        ],
+
+        'ts/sort-type-constituents': 'off',
+        'perfectionist/sort-union-types': [
+          'error',
+          {
+            type: 'alphabetical',
+            order: 'asc',
+            ignoreCase: true,
+            groups: [
+              'keyword',
+              'literal',
+              'named',
+              ['tuple', 'union', 'intersection'],
+              'object',
+              'function',
+              'operator',
+              'conditional',
+              'import',
+              'nullish',
+              'unknown'
+            ]
+          }
+        ]
+      }
     }
+  },
+  compat.config({
+    extends: ['plugin:@next/next/core-web-vitals']
+  }),
+  tailwind.configs['flat/recommended']
+).override('antfu/react/setup', (config) => ({
+  ...config,
+  plugins: {
+    ...config.plugins,
+    'react-hooks': fixupPluginRules(reactHooksPlugin)
   }
-});
+}));
