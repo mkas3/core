@@ -29,8 +29,7 @@ nextConfigs = nextConfigs.map((config, index) =>
             ecmaFeatures: {
               jsx: true
             }
-          },
-          sourceType: 'module'
+          }
         }
       }
     : config
