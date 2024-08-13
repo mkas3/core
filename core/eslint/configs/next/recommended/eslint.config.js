@@ -112,8 +112,8 @@ module.exports = antfu(
                 'alias-app': ['@/app/*'],
                 'alias-components': ['@/components/*'],
                 'alias-lib': ['@/lib/*', '@/utils/*'],
-                'next': ['next', 'next-*', 'next/*'],
-                'react': ['react', 'react-*', 'react/*']
+                next: ['next', 'next-*', 'next/*'],
+                react: ['react', 'react-*', 'react/*']
               }
             },
             groups: [
@@ -291,7 +291,8 @@ module.exports = antfu(
     typescript: {
       overrides: {
         'ts/consistent-type-definitions': ['error', 'type'],
-        'ts/strict-boolean-expressions': 'off'
+        'ts/strict-boolean-expressions': 'off',
+        'ts/no-misused-promises': ['error', { checksVoidReturn: { attributes: false } }]
       }
     }
   },
