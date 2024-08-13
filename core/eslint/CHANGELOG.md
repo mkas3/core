@@ -1,8 +1,16 @@
 # Change Log - @mkas3/eslint
 
-This log was last generated on Tue, 13 Aug 2024 00:53:11 GMT and should not be manually modified.
+This log was last generated on Tue, 13 Aug 2024 00:54:24 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.3.8
+
+Tue, 13 Aug 2024 00:54:24 GMT
+
+### Patches
+
+- fix: fix tailwind (madTwo.19@yandex.ru)
 
 ## 2.3.7
 
