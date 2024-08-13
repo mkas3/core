@@ -78,13 +78,6 @@ module.exports = antfu(
         'style/arrow-parens': ['error', 'always'],
         'style/comma-dangle': ['error', 'never'],
         'style/jsx-quotes': ['error', 'prefer-single'],
-        'style/max-len': [
-          'warn',
-          {
-            code: 120,
-            tabWidth: 2
-          }
-        ],
         'style/member-delimiter-style': [
           'error',
           {
