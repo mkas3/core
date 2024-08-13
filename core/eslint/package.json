@@ -1,38 +1,35 @@
 {
   "name": "@mkas3/eslint",
-  "description": "Eslint configs",
-  "license": "MIT",
   "version": "2.3.11",
+  "description": "Eslint configs",
+  "author": {
+    "name": "mkas3 📛",
+    "url": "https://github.com/mkas3"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mkas3/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkas3/core"
+  },
+  "bugs": {
+    "url": "https://github.com/mkas3/core/issues"
+  },
   "keywords": [
     "config",
     "eslint",
     "eslint-config"
   ],
-  "author": {
-    "name": "mkas3 📛",
-    "url": "https://github.com/mkas3"
-  },
-  "bugs": {
-    "url": "https://github.com/mkas3/core/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mkas3/core"
-  },
-  "homepage": "https://github.com/mkas3/core",
   "publishConfig": {
     "access": "public"
   },
+  "main": "index.js",
   "files": [
     "configs"
   ],
-  "main": "index.js",
   "scripts": {
     "dev": "npx @eslint/config-inspector@latest --config configs/next/recommended/eslint.config.js",
     "format": "prettier --write \"*.js\""
-  },
-  "lint-staged": {
-    "*.ts": "prettier --write"
   },
   "peerDependencies": {
     "@antfu/eslint-config": "^2.25.1",
@@ -48,5 +45,8 @@
     "eslint-plugin-react-hooks": "5.1.0-beta-26f2496093-20240514",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-tailwindcss": "^3.17.4"
+  },
+  "lint-staged": {
+    "*.ts": "prettier --write"
   }
 }

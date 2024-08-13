@@ -1,8 +1,8 @@
-const { FlatCompat } = require('@eslint/eslintrc');
 const { antfu } = require('@antfu/eslint-config');
-const tailwind = require('eslint-plugin-tailwindcss');
-const { fixupPluginRules, fixupConfigRules } = require('@eslint/compat');
+const { fixupConfigRules, fixupPluginRules } = require('@eslint/compat');
+const { FlatCompat } = require('@eslint/eslintrc');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
+const tailwind = require('eslint-plugin-tailwindcss');
 
 const compat = new FlatCompat();
 
@@ -23,14 +23,14 @@ nextConfigs = nextConfigs.map((config, index) =>
     ? {
         ...config,
         files: ['**/*.?([cm])[jt]s?(x)'],
-        plugins: [],
         languageOptions: {
           parserOptions: {
             ecmaFeatures: {
               jsx: true
             }
           }
-        }
+        },
+        plugins: []
       }
     : config
 );
@@ -47,16 +47,10 @@ tailwindConfigs = tailwindConfigs.with(1, {
   languageOptions: { ...tailwindConfigs[0].languageOptions }
 });
 
-delete tailwindConfigs[0]['languageOptions'];
+delete tailwindConfigs[0].languageOptions;
 
 module.exports = antfu(
   {
-    typescript: {
-      overrides: {
-        'ts/consistent-type-definitions': ['error', 'type'],
-        'ts/strict-boolean-expressions': 'off'
-      }
-    },
     react: {
       overrides: {
         'antfu/top-level-function': 'off',
@@ -78,12 +72,19 @@ module.exports = antfu(
       }
     },
     stylistic: {
-      quotes: 'single',
-      jsx: true,
       indent: 2,
-      semi: true,
+      jsx: true,
       overrides: {
+        'style/arrow-parens': ['error', 'always'],
         'style/comma-dangle': ['error', 'never'],
+        'style/jsx-quotes': ['error', 'prefer-single'],
+        'style/max-len': [
+          'warn',
+          {
+            code: 120,
+            tabWidth: 2
+          }
+        ],
         'style/member-delimiter-style': [
           'error',
           {
@@ -91,28 +92,37 @@ module.exports = antfu(
               delimiter: 'semi',
               requireLast: true
             },
+            multilineDetection: 'brackets',
             singleline: {
               delimiter: 'semi',
               requireLast: false
-            },
-            multilineDetection: 'brackets'
+            }
           }
         ],
-        'style/jsx-quotes': ['error', 'prefer-single'],
-        'style/arrow-parens': ['error', 'always'],
 
         'import/order': 'off',
         'sort-imports': 'off',
 
+        'perfectionist/sort-exports': [
+          'error',
+          { ignoreCase: true, order: 'asc', type: 'alphabetical' }
+        ],
         'perfectionist/sort-imports': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
-            ignoreCase: true,
-            internalPattern: ['~/**'],
-            newlinesBetween: 'always',
-            maxLineLength: undefined,
+            customGroups: {
+              type: {
+                'next-type': ['next', 'next-*', 'next/*'],
+                'react-type': ['react', 'react-*', 'react/*']
+              },
+              value: {
+                'alias-app': ['@/app/*'],
+                'alias-components': ['@/components/*'],
+                'alias-lib': ['@/lib/*', '@/utils/*'],
+                'next': ['next', 'next-*', 'next/*'],
+                'react': ['react', 'react-*', 'react/*']
+              }
+            },
             groups: [
               'react-type',
               'next-type',
@@ -138,42 +148,31 @@ module.exports = antfu(
               'object',
               'unknown'
             ],
-            customGroups: {
-              value: {
-                react: ['react', 'react-*', 'react/*'],
-                next: ['next', 'next-*', 'next/*'],
-                'alias-app': ['@/app/*'],
-                'alias-components': ['@/components/*'],
-                'alias-lib': ['@/lib/*', '@/utils/*']
-              },
-              type: {
-                'react-type': ['react', 'react-*', 'react/*'],
-                'next-type': ['next', 'next-*', 'next/*']
-              }
-            }
+            ignoreCase: true,
+            internalPattern: ['~/**'],
+            maxLineLength: undefined,
+            newlinesBetween: 'always',
+            order: 'asc',
+            type: 'alphabetical'
+          }
+        ],
+        'perfectionist/sort-named-exports': [
+          'error',
+          {
+            groupKind: 'types-first',
+            ignoreCase: true,
+            order: 'asc',
+            type: 'alphabetical'
           }
         ],
         'perfectionist/sort-named-imports': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
+            groupKind: 'types-first',
             ignoreAlias: false,
             ignoreCase: true,
-            groupKind: 'types-first'
-          }
-        ],
-        'perfectionist/sort-exports': [
-          'error',
-          { type: 'alphabetical', order: 'asc', ignoreCase: true }
-        ],
-        'perfectionist/sort-named-exports': [
-          'error',
-          {
-            type: 'alphabetical',
             order: 'asc',
-            ignoreCase: true,
-            groupKind: 'types-first'
+            type: 'alphabetical'
           }
         ],
 
@@ -181,9 +180,6 @@ module.exports = antfu(
         'perfectionist/sort-intersection-types': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
-            ignoreCase: true,
             groups: [
               'keyword',
               'literal',
@@ -196,18 +192,23 @@ module.exports = antfu(
               'import',
               'nullish',
               'unknown'
-            ]
+            ],
+            ignoreCase: true,
+            order: 'asc',
+            type: 'alphabetical'
           }
         ],
 
-        'style/jsx-sort-props': 'off',
         'perfectionist/sort-jsx-props': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
-            ignoreCase: true,
-            ignorePattern: [],
+            customGroups: {
+              key: 'key',
+              className: 'className',
+              otherClassName: '*ClassName',
+              callback: 'on*',
+              ref: 'ref'
+            },
             groups: [
               'key',
               'ref',
@@ -217,66 +218,60 @@ module.exports = antfu(
               'shorthand',
               'callback'
             ],
-            customGroups: {
-              key: 'key',
-              ref: 'ref',
-              className: 'className',
-              otherClassName: '*ClassName',
-              callback: 'on*'
-            }
+            ignoreCase: true,
+            ignorePattern: [],
+            order: 'asc',
+            type: 'alphabetical'
           }
         ],
+        'style/jsx-sort-props': 'off',
 
-        'ts/adjacent-overload-signatures': 'off',
         'perfectionist/sort-object-types': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
-            ignoreCase: true,
-            partitionByNewLine: true,
-            groupKind: 'required-first',
-            groups: ['id', 'boolean', 'className', 'unknown', 'callback'],
             customGroups: {
               id: 'id',
               className: '*ClassName',
               boolean: 'is*',
               callback: 'on*'
-            }
+            },
+            groupKind: 'required-first',
+            groups: ['id', 'boolean', 'className', 'unknown', 'callback'],
+            ignoreCase: true,
+            order: 'asc',
+            partitionByNewLine: true,
+            type: 'alphabetical'
           }
         ],
+        'ts/adjacent-overload-signatures': 'off',
 
-        'sort-keys': 'off',
         'perfectionist/sort-objects': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
+            customGroups: {
+              key: 'key',
+              id: 'id',
+              className: 'className',
+              otherClassName: '*ClassName',
+              callback: 'on*',
+              children: 'children'
+            },
+            destructureOnly: false,
+            groups: ['key', 'id', 'className', 'otherClassName', 'unknown', 'children', 'callback'],
             ignoreCase: true,
+            ignorePattern: [],
+            order: 'asc',
             partitionByComment: false,
             partitionByNewLine: true,
             styledComponents: true,
-            destructureOnly: false,
-            ignorePattern: [],
-            groups: ['key', 'id', 'className', 'otherClassName', 'unknown', 'children', 'callback'],
-            customGroups: {
-              id: 'id',
-              key: 'key',
-              className: 'className',
-              otherClassName: '*ClassName',
-              children: 'children',
-              callback: 'on*'
-            }
+            type: 'alphabetical'
           }
         ],
+        'sort-keys': 'off',
 
-        'ts/sort-type-constituents': 'off',
         'perfectionist/sort-union-types': [
           'error',
           {
-            type: 'alphabetical',
-            order: 'asc',
-            ignoreCase: true,
             groups: [
               'keyword',
               'literal',
@@ -289,9 +284,21 @@ module.exports = antfu(
               'import',
               'nullish',
               'unknown'
-            ]
+            ],
+            ignoreCase: true,
+            order: 'asc',
+            type: 'alphabetical'
           }
-        ]
+        ],
+        'ts/sort-type-constituents': 'off'
+      },
+      quotes: 'single',
+      semi: true
+    },
+    typescript: {
+      overrides: {
+        'ts/consistent-type-definitions': ['error', 'type'],
+        'ts/strict-boolean-expressions': 'off'
       }
     }
   },
