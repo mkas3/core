@@ -1,8 +1,14 @@
+const { FlatCompat } = require('@eslint/eslintrc');
 const { antfu } = require('@antfu/eslint-config');
 const tailwind = require('eslint-plugin-tailwindcss');
-const next = require('@next/eslint-plugin-next');
+
+const compat = new FlatCompat();
 
 module.exports = antfu({
+  ...compat.config({
+    extends: ['plugin:@next/next/core-web-vitals']
+  }),
+  ...tailwind.configs['flat/recommended'],
   typescript: {
     overrides: {
       'ts/consistent-type-definitions': ['error', 'type'],
@@ -238,6 +244,4 @@ module.exports = antfu({
       ]
     }
   }
-})
-  .append(...tailwind.configs['flat/recommended'])
-  .append(...next.configs['core-web-vitals']);
+});
