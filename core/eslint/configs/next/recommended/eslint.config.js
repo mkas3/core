@@ -25,7 +25,6 @@ nextConfigs = nextConfigs.map((config, index) =>
         files: ['**/*.?([cm])[jt]s?(x)'],
         plugins: [],
         languageOptions: {
-          parser: 'typescript-eslint/parser',
           parserOptions: {
             ecmaFeatures: {
               jsx: true
@@ -46,10 +45,10 @@ let tailwindConfigs = tailwind.configs['flat/recommended']
 
 tailwindConfigs = tailwindConfigs.with(1, {
   ...tailwindConfigs[1],
-  languageOptions: tailwindConfigs[0].languageOptions
+  languageOptions: { ...tailwindConfigs[0].languageOptions }
 });
 
-tailwindConfigs = tailwindConfigs.with(0, { ...tailwindConfigs[0], languageOptions: undefined });
+delete tailwindConfigs[0]['languageOptions'];
 
 module.exports = antfu(
   {
